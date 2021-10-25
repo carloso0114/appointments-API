@@ -19,6 +19,9 @@ gem 'puma', '~> 5.0'
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
 
+# Use Cloudinary for image Hosting
+gem 'cloudinary'
+
 # Use rubocop for linters
 gem 'rubocop'
 

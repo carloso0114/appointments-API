@@ -5,7 +5,8 @@ class CarsController < ApplicationController
   end
 
   def create
-    @car = Car.new(car_params)
+    image = Cloudinary::Uploader.upload(params[:image])
+    @car = Car.new(car_params, image: image['url'])
     if @car.save
       render json: { message: 'Car successfully created' }, status: 201
     else
@@ -25,6 +26,6 @@ class CarsController < ApplicationController
   private
 
   def car_params
-    params.require(:car).permit(:name, :model, :description)
+    params.require(:car).permit(:name, :model, :description, :image)
   end
 end

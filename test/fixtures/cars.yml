@@ -4,8 +4,10 @@ one:
   name: MyString
   model: MyString
   description: MyText
+  image: MyString
 
 two:
   name: MyString
   model: MyString
   description: MyText
+  image: MyString
