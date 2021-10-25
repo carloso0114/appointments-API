@@ -1,11 +1,11 @@
 # Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  car: MyString
-  date: 2021-10-25
+  date: 2021-10-26
   user: one
+  car: one
 
 two:
-  car: MyString
-  date: 2021-10-25
+  date: 2021-10-26
   user: two
+  car: two
