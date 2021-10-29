@@ -17,10 +17,7 @@ end
   private
 
 def create_car
-  @car = Car.new(car_params)
-  @car.attach_image
-end
-
-def car_params
-  params.require(:car).permit(:name, :model, :description, :image)
+  image = Cloudinary::Uploader.upload(params[:image])
+  @car = Item.create(image: image['url'], name: params[:name], model: params[:model],
+                     description: params[:description])
 end
