@@ -18,6 +18,6 @@ end
 
 def create_car
   image = Cloudinary::Uploader.upload(params[:image])
-  @car = Item.create(image: image['url'], name: params[:name], model: params[:model],
-                     description: params[:description])
+  @car = Car.create(image: image['url'], name: params[:name], model: params[:model],
+                    description: params[:description])
 end
