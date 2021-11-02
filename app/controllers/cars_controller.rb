@@ -12,6 +12,11 @@ class CarsController < ApplicationController
       render json: { message: 'Unable to create car' }, status: 400
     end
   end
+
+  def destroy
+    @car = Car.find(params[:id])
+    @car.destroy
+  end
 end
 
   private
