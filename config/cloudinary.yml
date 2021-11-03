@@ -1,0 +1,18 @@
+development:
+  cloud_name: hostingfreeplease
+  api_key: '326943284726431'
+  api_secret: p0oxs_wFBk3-GhSMb6t13YdX4Bo
+  enhance_image_tag: true
+  static_file_support: false
+production:
+  cloud_name: hostingfreeplease
+  api_key: '326943284726431'
+  api_secret: p0oxs_wFBk3-GhSMb6t13YdX4Bo
+  enhance_image_tag: true
+  static_file_support: true
+test:
+  cloud_name: hostingfreeplease
+  api_key: '326943284726431'
+  api_secret: p0oxs_wFBk3-GhSMb6t13YdX4Bo
+  enhance_image_tag: true
+  static_file_support: false

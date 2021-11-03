@@ -1,12 +1,11 @@
 class CarsController < ApplicationController
+  before_action :create_car, only: [:create]
   def index
     @cars = Car.all
     render json: { cars: @cars }
   end
 
   def create
-    image = Cloudinary::Uploader.upload(params[:image])
-    @car = Car.new(car_params, image: image['url'])
     if @car.save
       render json: { message: 'Car successfully created' }, status: 201
     else
@@ -17,15 +16,17 @@ class CarsController < ApplicationController
   def destroy
     @car = Car.find(params[:id])
     if @car.destroy
-      render json: { message: 'Car successfully deleted' }, status: 200
+      render json: { message: 'Car successfully deleted' }, status: 201
     else
       render json: { message: 'Unable to delete car' }, status: 400
     end
   end
+end
 
   private
 
-  def car_params
-    params.require(:car).permit(:name, :model, :description, :image)
-  end
+def create_car
+  image = Cloudinary::Uploader.upload(params[:image])
+  @car = Car.create(image: image['url'], name: params[:name], model: params[:model],
+                    description: params[:description])
 end
