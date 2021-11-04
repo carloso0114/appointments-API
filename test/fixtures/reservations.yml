@@ -1,0 +1,11 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  date: 2021-10-26
+  user: one
+  car: one
+
+two:
+  date: 2021-10-26
+  user: two
+  car: two
